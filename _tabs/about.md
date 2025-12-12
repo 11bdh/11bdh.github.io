@@ -4,5 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+> Harcerstwo to ruch wychowawczy dzieci i młodzieży, który rozwija umiejętności, charakter i postawy prospołeczne poprzez służbę, pracę nad sobą i braterstwo.
+Wywodzi się z międzynarodowego skautingu stworzonego przez Roberta Baden-Powella.
+ {: .prompt-info }
