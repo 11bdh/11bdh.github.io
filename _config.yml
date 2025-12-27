@@ -16,7 +16,7 @@ timezone:
 
 title: 11 BDH # the main title
 
-tagline: 11 Białostocka Drużyna Harcerska "Husaria" im. Jana III Sobieskiego # it will display as the subtitle
+tagline: 11 Białostocka Drużyna Harccerzy "Husaria" im. Jana III Sobieskiego # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Superancka drużyna harcerska.
@@ -34,14 +34,14 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
+  name: 11 Białostocka Drużyna Harccerzy "Husaria" im. Jana III Sobieskiego
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    # - https://twitter.com/username # change to your Twitter homepage
+    # - https://github.com/username # change to your GitHub homepage
     # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+     - https://www.facebook.com/groups/300575446971175
     # - https://www.linkedin.com/in/username
 
 # Site Verification Settings
