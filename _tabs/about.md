@@ -4,5 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Narazie pusto
-{: .prompt-info }
+## F&Q
+> Tutaj pojawią się najczęściej zadawane pytania dotyczące drużyny itd.
+{: .prompt-tip }
+
