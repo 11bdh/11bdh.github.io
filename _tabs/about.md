@@ -17,7 +17,7 @@ order: 4
     </div>
 </div>
 
-> Jeśli chcesz dołączyć siebie lub kogoś do drużyny, w sprawach zbiórki, płatności, obozów itd. skontaktuj się z drużynowym Selimem, używając maila selim.mucharski@zhp.net.pl
+> Jeśli chcesz dołączyć siebie lub kogoś do drużyny, w sprawach zbiórki, płatności, obozów itd. skontaktuj się z drużynowym Selimem, używając maila [selim.mucharski@zhp.net.pl](mailto:selim.mucharski%40zhp.net.pl)
 {: .prompt-info }
  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 <div style="display: flex; background: rgba(255, 0, 255, 0.1); padding: 1rem 1.25rem; border-radius: 0.5rem; align-items: flex-start; margin-bottom: 1rem;">
