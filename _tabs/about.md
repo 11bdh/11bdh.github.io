@@ -8,8 +8,13 @@ order: 4
 > Tutaj pojawią się najczęściej zadawane pytania dotyczące drużyny itd.
 {: .prompt-tip }
  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-<div style="background: rgba(255, 0, 255, 0.15); border-left: 5px solid magenta; padding: 15px; border-radius: 5px; color: #ff00ff; font-weight: 500;">
-    ❓ Czym jest harcerstwo ?.
+<div style="display: flex; background: rgba(255, 0, 255, 0.1); padding: 1rem 1.25rem; border-radius: 0.5rem; align-items: flex-start; margin-bottom: 1rem;">
+    <span style="color: #ff00ff; margin-right: 0.8rem; font-family: 'Font Awesome 5 Free'; font-weight: 900; line-height: 1.5;">
+        <i class="fas fa-question-circle"></i>
+    </span>
+    <div style="line-height: 1.5;">
+        Czym jest harcerstwo ?
+    </div>
 </div>
 
 > Harcerstwo to ruch wychowawczy dzieci i młodzieży, który rozwija umiejętności, charakter i postawy prospołeczne poprzez służbę, pracę nad sobą i braterstwo.
