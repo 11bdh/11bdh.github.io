@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## F&Q
+## FAQ
 > Tutaj pojawią się najczęściej zadawane pytania dotyczące drużyny itd.
 {: .prompt-tip }
  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
