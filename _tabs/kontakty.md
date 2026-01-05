@@ -1,7 +1,7 @@
 ---
 title: Kontakty
-icon: fas fa-question-circle
+icon: fas fa-fa-circle-user
 order: 5
 ---
 
-Test ?
+Tu kontakty
