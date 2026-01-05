@@ -1,5 +1,5 @@
 ---
-# the default layout is 'page'
+title: F&Q
 icon: fas fa-info-circle
 order: 4
 ---
