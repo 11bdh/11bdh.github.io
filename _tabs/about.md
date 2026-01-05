@@ -1,6 +1,6 @@
 ---
 title: F&Q
-icon: fas fa-info-circle
+icon: fas fa-question-circle
 order: 4
 ---
 
