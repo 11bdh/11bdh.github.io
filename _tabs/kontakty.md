@@ -1,6 +1,6 @@
 ---
 title: Kontakty
-icon: fas fa-fa-circle-user
+icon: fas fa-circle-user
 order: 5
 ---
 
