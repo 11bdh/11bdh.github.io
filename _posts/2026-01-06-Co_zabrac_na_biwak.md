@@ -1,7 +1,7 @@
 ---
 title: Co zabrać na biwak zimowy
 author: sowaa
-date: 2026-01-06 18:00:00 +0000
+date: 2026-01-06 10:00:00 +0000
 categories: [harcerstwo]
 tags: [Wyjazdy]
 render_with_liquid: false
