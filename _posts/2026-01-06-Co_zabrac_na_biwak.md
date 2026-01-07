@@ -9,13 +9,13 @@ render_with_liquid: false
 # Czuwaj !
 ### Biwak będzie w szkole w Choroszczy
 ### Rzeczy do zabrania
-Pełne umundurowanie
-Śpiwór, karimata, poduszka
-Piżama
-Buty do chodzenia po szkole
-Ciepłe ubrania na dwór
-Ubrania na każdy dzień
-Przybory toaletowe
-Kubek, sztućce, menażka
-Butelka filtrująca
-Dobry humor (obowiązkowe!) 
+* Pełne umundurowanie
+* Śpiwór, karimata, poduszka
+* Piżama
+* Buty do chodzenia po szkole
+* Ciepłe ubrania na dwór
+* Ubrania na każdy dzień
+* Przybory toaletowe
+* Kubek, sztućce, menażka
+* Butelka filtrująca
+* Dobry humor (obowiązkowe!) 
