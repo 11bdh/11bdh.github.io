@@ -1,13 +1,13 @@
 ---
 title: Co zabrać na biwak zimowy
-author: sowaa
+author: adam
 date: 2026-01-06 10:00:00 +0000
 categories: [harcerstwo]
 tags: [Wyjazdy]
 render_with_liquid: false
 ---
 # Czuwaj !
-### Biwak będzie w szkole w Choroszczy
+### Biwak będzie w Choroszczy
 ### Rzeczy do zabrania
 * Pełne umundurowanie
 * Śpiwór, karimata, poduszka
