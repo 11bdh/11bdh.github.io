@@ -15,7 +15,7 @@ order: 99
 
 ## 🧪 Prompt Lab
 
-<textarea placeholder="Prompt 1..." style="width:100%;height:120px;"></textarea>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FWarsaw&showCalendars=0&showTz=0&src=ZXdld2VyYmFuQGdtYWlsLmNvbQ&color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 <textarea placeholder="Prompt 2..." style="width:100%;height:120px;margin-top:10px;"></textarea>
 
