@@ -1,6 +1,5 @@
 # The Site Configuration
-<script data-goatcounter="https://11husaria.goatcounter.com/count"
-        asynchroniczne src="//gc.zgo.at/count.js"></script>
+
 # Import the theme
 theme: jekyll-theme-chirpy
 
