@@ -2,10 +2,13 @@ adam:
   name: Adam Sowa
   email: sowaadamek@gmail.com
   bio: Webmaster of disaster.
+  avatar: /assets/Adam.png
+
 selim:
   name: Selim Mucharski
   email: selim.mucharski@zhp.net.pl
   bio: Drużynowy
+
 olaf_p:
   name: Olaf Paniczko
   email: 7eon.brawl@gmail.com
