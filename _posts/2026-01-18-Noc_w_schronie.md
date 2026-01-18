@@ -1,8 +1,6 @@
 ---
 title: Noc w schronie
-author:
-  name: adam
-  avatar: assets/Adam.png
+author: adam
 avatar: assets/Adam.png
 date: 2026-01-18 00:01:00 +0000
 categories: [harcerstwo]
