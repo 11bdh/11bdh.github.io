@@ -1,7 +1,7 @@
 ---
 title: Noc w schronie
 author:
-  name: Adam
+  name: adam
   avatar: assets/Adam.png
 avatar: assets/Adam.png
 date: 2026-01-18 00:01:00 +0000
