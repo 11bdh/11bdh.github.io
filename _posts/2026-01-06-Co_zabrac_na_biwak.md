@@ -35,11 +35,10 @@ render_with_liquid: false
 - śpiewnik/ zeszyt i długopis
 A teraz rzeczy dodatkowe OBOWIĄZKOWE, które trzeba wziąć:
 - strój fantasy na dyskotekę
-- ZUCHY: biała koszulka do zniszczenia 
+- ZUCHY: biała koszulka do zniszczenia.
 Jak co roku, na zimowisku będą zbierane telefony komórkowe i rozdawane w trakcie czasu na rozmowę z rodzicami:
-17:45-18:15 - 28BDH, 11BDH
-18:15-18:45 - 34BGZ, 10BDHR, 100BDHiH
-Wszystkie dzieci, które przyjmują leki muszą je mieć opisane (jak przyjmować, kiedy, z imieniem i nazwiskiem dziecka) - kadra będzie je zbierać i rozdawać dzieciom w odpowiednich porach.
+- 17:45-18:15 - 28BDH, 11BDH
+- 18:15-18:45 - 34BGZ, 10BDHR, 100BDHiH.
+Wszystkie dzieci, które przyjmują leki muszą je mieć opisane (jak przyjmować, kiedy, z imieniem i nazwiskiem dziecka) - kadra będzie je zbierać i rozdawać dzieciom. w odpowiednich porach.
 Komenda oraz kadra nie ponosi odpowiedzialności za rzeczy uczestników, zwłaszcza wysokowartościowe, których rekomendujemy NIE brać
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FWarsaw&showCalendars=0&showTz=0&src=ZXdld2VyYmFuQGdtYWlsLmNvbQ&color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
