@@ -2,7 +2,6 @@
 title: "Pierwsza piosenka"
 categories: [piosenki]
 tags: [demo]
-hidden: true
 ---
 
 > Zwrotka 1  
