@@ -1,12 +1,16 @@
 ---
-layout: muzyka
-icon: fas fa-tags
+title: Muzyka
+icon: fas fa-music
 order: 5
 layout: page
 ---
 
 {% assign songs = site.categories.piosenki | sort: "date" | reverse %}
 
-{% for post in songs %}
-  {% include post-preview.html post=post %}
-{% endfor %}
+{% if songs %}
+  {% for post in songs %}
+    {% include components/post-card.html post=post %}
+  {% endfor %}
+{% else %}
+  <p>Brak dodanych piosenek.</p>
+{% endif %}
