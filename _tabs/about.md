@@ -13,6 +13,19 @@ order: 4
         <i class="fas fa-question-circle"></i>
     </span>
     <div style="line-height: 1.5;">
+        Jak zadać pytanie do FAQ ?
+    </div>
+</div>
+
+ > Po prostu <a href="mailto:adam.sowa@zhp.pl">kliknij tutaj</a> aby wysłać maila z pytaniem na mój adres e-mail.
+{: .prompt-info }
+ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<div style="display: flex; background: rgba(255, 0, 255, 0.1); padding: 1rem 1.25rem; border-radius: 0.5rem; align-items: flex-start; margin-bottom: 1rem;">
+    <span style="color: #ff00ff; margin-right: 0.8rem; font-family: 'Font Awesome 5 Free'; font-weight: 900; line-height: 1.5;">
+        <i class="fas fa-question-circle"></i>
+    </span>
+    <div style="line-height: 1.5;">
         Z kim skontaktować się w sprawach harcerskich ?
     </div>
 </div>
