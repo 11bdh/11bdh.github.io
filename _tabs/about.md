@@ -1,6 +1,7 @@
 ---
 title: FAQ
-icon: fas fa-question-circle
+icon: fas fa-comments
+
 order: 4
 ---
 
