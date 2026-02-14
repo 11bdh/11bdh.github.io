@@ -1,5 +1,5 @@
 ---
-title: F&Q
+title: FAQ
 icon: fas fa-question-circle
 order: 4
 ---
