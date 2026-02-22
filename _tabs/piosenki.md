@@ -5,9 +5,8 @@ icon: fas fa-music
 order: 99
 ---
 
-<div class="mb-4" style="position: relative;">
-  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off" style="padding-right: 35px;">
-  <span id="clear-search" style="display:none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 20px; font-weight: bold; color: #888; line-height: 1;">&times;</span>
+<div class="mb-4">
+  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off">
 </div>
 
 {% assign sorted_songs = site.piosenki | sort: "title" %}
@@ -28,64 +27,52 @@ order: 99
   {% endfor %}
 </div>
 
-<div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki o takim tytule.</div>
+<div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki.</div>
 
 <script>
-(function() {
-  function initSearch() {
-    const searchInput = document.getElementById('song-search');
-    const clearBtn = document.getElementById('clear-search');
-    const songs = document.querySelectorAll('.song-item');
-    const letters = document.querySelectorAll('.letter-group');
-    const noResults = document.getElementById('no-results');
+// Funkcja, która robi całą robotę
+function startSearching() {
+  const searchInput = document.getElementById('song-search');
+  const songs = document.querySelectorAll('.song-item');
+  const letters = document.querySelectorAll('.letter-group');
+  const noResults = document.getElementById('no-results');
 
-    if (!searchInput || !clearBtn) return;
+  if (!searchInput) return;
 
-    function filter() {
-      const val = searchInput.value.toLowerCase().trim();
-      let hasAny = false;
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    let foundAny = false;
 
-      // Pokazywanie przycisku X
-      clearBtn.style.display = val.length > 0 ? 'block' : 'none';
-
-      // Filtrowanie piosenek
-      songs.forEach(s => {
-        const match = s.textContent.toLowerCase().includes(val);
-        s.style.display = match ? 'block' : 'none';
-        if (match) hasAny = true;
-      });
-
-      // Ukrywanie liter
-      letters.forEach(l => {
-        let hasVisible = false;
-        let next = l.nextElementSibling;
-        while (next && next.classList.contains('song-item')) {
-          if (next.style.display !== 'none') {
-            hasVisible = true;
-            break;
-          }
-          next = next.nextElementSibling;
-        }
-        l.style.display = hasVisible ? 'block' : 'none';
-      });
-
-      noResults.style.display = hasAny ? 'none' : 'block';
-    }
-
-    searchInput.addEventListener('input', filter);
-    
-    clearBtn.addEventListener('click', function() {
-      searchInput.value = '';
-      filter();
-      searchInput.focus();
+    // Filtruj piosenki
+    songs.forEach(song => {
+      const title = song.textContent.toLowerCase();
+      if (title.includes(query)) {
+        song.style.display = 'block';
+        foundAny = true;
+      } else {
+        song.style.display = 'none';
+      }
     });
-  }
 
-  // Uruchomienie skryptu niezależnie od tego, jak Chirpy ładuje stronę
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSearch);
-  } else {
-    initSearch();
-  }
-})();
+    // Filtruj litery (A, B, C...)
+    letters.forEach(letter => {
+      let hasVisibleSongs = false;
+      let nextEl = letter.nextElementSibling;
+      while (nextEl && nextEl.classList.contains('song-item')) {
+        if (nextEl.style.display !== 'none') {
+          hasVisibleSongs = true;
+          break;
+        }
+        nextEl = nextEl.nextElementSibling;
+      }
+      letter.style.display = hasVisibleSongs ? 'block' : 'none';
+    });
+
+    noResults.style.display = foundAny ? 'none' : 'block';
+  });
+}
+
+// Ten kawałek kodu pilnuje, żeby wyszukiwarka odpaliła się nawet w Chirpy
+document.addEventListener('DOMContentLoaded', startSearching);
+startSearching(); // Odpalenie bezpośrednie na wszelki wypadek
 </script>
