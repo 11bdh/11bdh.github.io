@@ -25,5 +25,5 @@ order: 99
 </div>
 
 {% if sorted_songs.size == 0 %}
-  <p class="text-muted">Folder _piosenki jest pusty lub kolekcja nie została załadowana.</p>
+  <p class="text-muted">Brak piosenek w folderze _piosenki.</p>
 {% endif %}
