@@ -14,4 +14,4 @@ render_with_liquid: false
 - 10:30 Spotkanie z Robertem Baden-Powellem + pytania
 - 10:45 Zadania od Roberta Baden-Powella
 - 10:55 Zakończenie lampkowiska
-Na zbiórce była możliwość zakupienia przypinek z okazji stulecia Dnia Myśli Braterskiej
+- Na zbiórce była możliwość zakupienia przypinek z okazji stulecia Dnia Myśli Braterskiej
