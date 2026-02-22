@@ -5,8 +5,9 @@ icon: fas fa-music
 order: 99
 ---
 
-<div class="mb-4">
-  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off">
+<div class="mb-4" style="position: relative;">
+  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off" style="padding-right: 35px;">
+  <span id="clear-search" style="display:none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 22px; color: #888; line-height: 1; user-select: none; z-index: 10;">&times;</span>
 </div>
 
 {% assign sorted_songs = site.piosenki | sort: "title" %}
@@ -30,16 +31,19 @@ order: 99
 <div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki.</div>
 
 <script>
-  /* Funkcja filtrująca */
   function runSongSearch() {
     const input = document.getElementById('song-search');
-    if (!input) return;
+    const clearBtn = document.getElementById('clear-search');
+    if (!input || !clearBtn) return;
 
-    input.addEventListener('input', function() {
-      const query = this.value.toLowerCase().trim();
+    function filter() {
+      const query = input.value.toLowerCase().trim();
       const items = document.querySelectorAll('.song-item');
       const letters = document.querySelectorAll('.letter-group');
       let found = false;
+
+      // Pokaż X tylko jeśli coś jest wpisane
+      clearBtn.style.display = query.length > 0 ? 'block' : 'none';
 
       items.forEach(item => {
         const text = item.textContent.toLowerCase();
@@ -65,23 +69,25 @@ order: 99
       });
 
       document.getElementById('no-results').style.display = found ? 'none' : 'block';
+    }
+
+    input.addEventListener('input', filter);
+    
+    // Obsługa kliknięcia w krzyżyk
+    clearBtn.addEventListener('click', function() {
+      input.value = '';
+      filter();
+      input.focus();
     });
   }
 
-  /* Kluczowe dla Chirpy: uruchom przy każdym załadowaniu strony */
-  if (typeof pageviews !== 'undefined') {
-    runSongSearch();
-  } else {
+  // Odpalenie skryptu
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', runSongSearch);
+  } else {
+    runSongSearch();
   }
-
-  /* Dodatkowy wyzwalacz dla nawigacji Chirpy */
-  window.addEventListener('message', (event) => {
-    if (event.data === 'clear-search') {
-       runSongSearch();
-    }
-  });
   
-  // Uruchomienie wymuszone
+  // Bezpiecznik dla motywu Chirpy
   setTimeout(runSongSearch, 500);
 </script>
