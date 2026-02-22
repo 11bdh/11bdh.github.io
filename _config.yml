@@ -167,6 +167,10 @@ kramdown:
       start_line: 1
 
 collections:
+  piosenki:
+    output: true
+    permalink: /piosenki/:name/
+  
   tabs:
     output: true
     sort_by: order
