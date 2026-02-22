@@ -5,8 +5,11 @@ icon: fas fa-music
 order: 99
 ---
 
-<div class="mb-4">
-  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off">
+<div class="mb-4 position-relative">
+  <input type="text" id="song-search" class="form-control" placeholder="🔍 Szukaj piosenki..." autocomplete="off" style="padding-right: 40px;">
+  <button id="clear-search" type="button" style="display:none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: transparent; cursor: pointer; color: var(--text-muted); font-size: 1.2rem;">
+    <i class="fas fa-times"></i>
+  </button>
 </div>
 
 {% assign sorted_songs = site.piosenki | sort: "title" %}
@@ -27,18 +30,24 @@ order: 99
   {% endfor %}
 </div>
 
-<div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki.</div>
+<div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki o takim tytule.</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('song-search');
-  
-  searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    const songs = document.querySelectorAll('.song-item');
-    const letters = document.querySelectorAll('.letter-group');
+  const clearBtn = document.getElementById('clear-search');
+  const songs = document.querySelectorAll('.song-item');
+  const letters = document.querySelectorAll('.letter-group');
+  const noResults = document.getElementById('no-results');
+
+  function filterSongs() {
+    const query = searchInput.value.toLowerCase().trim();
     let foundAny = false;
 
+    // Pokaż/ukryj przycisk X
+    clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+
+    // Filtrowanie piosenek
     songs.forEach(song => {
       const title = song.textContent.toLowerCase();
       if (title.includes(query)) {
@@ -49,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    // Filtrowanie liter
     letters.forEach(letter => {
       let hasVisibleSongs = false;
       let nextEl = letter.nextElementSibling;
@@ -62,7 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
       letter.style.display = hasVisibleSongs ? 'block' : 'none';
     });
 
-    document.getElementById('no-results').style.display = foundAny ? 'none' : 'block';
+    noResults.style.display = foundAny ? 'none' : 'block';
+  }
+
+  // Obsługa wpisywania
+  searchInput.addEventListener('input', filterSongs);
+
+  // Obsługa przycisku X
+  clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    filterSongs();
+    searchInput.focus();
   });
 });
 </script>
