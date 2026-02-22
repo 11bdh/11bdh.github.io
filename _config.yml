@@ -169,7 +169,7 @@ kramdown:
 collections:
   piosenki:
     output: true
-    permalink: /piosenki/:name/
+    permalink: /_piosenki/:name/
   
   tabs:
     output: true
