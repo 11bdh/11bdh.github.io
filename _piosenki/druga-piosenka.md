@@ -1,5 +1,5 @@
 ---
 layout: page
-title: Test Piosenki
+title: Druga Piosenka
 ---
 Tekst piosenki 2 tutaj...
