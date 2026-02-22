@@ -30,49 +30,58 @@ order: 99
 <div id="no-results" style="display:none;" class="text-muted mt-3">Nie znaleziono piosenki.</div>
 
 <script>
-// Funkcja, która robi całą robotę
-function startSearching() {
-  const searchInput = document.getElementById('song-search');
-  const songs = document.querySelectorAll('.song-item');
-  const letters = document.querySelectorAll('.letter-group');
-  const noResults = document.getElementById('no-results');
+  /* Funkcja filtrująca */
+  function runSongSearch() {
+    const input = document.getElementById('song-search');
+    if (!input) return;
 
-  if (!searchInput) return;
+    input.addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+      const items = document.querySelectorAll('.song-item');
+      const letters = document.querySelectorAll('.letter-group');
+      let found = false;
 
-  searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    let foundAny = false;
-
-    // Filtruj piosenki
-    songs.forEach(song => {
-      const title = song.textContent.toLowerCase();
-      if (title.includes(query)) {
-        song.style.display = 'block';
-        foundAny = true;
-      } else {
-        song.style.display = 'none';
-      }
-    });
-
-    // Filtruj litery (A, B, C...)
-    letters.forEach(letter => {
-      let hasVisibleSongs = false;
-      let nextEl = letter.nextElementSibling;
-      while (nextEl && nextEl.classList.contains('song-item')) {
-        if (nextEl.style.display !== 'none') {
-          hasVisibleSongs = true;
-          break;
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.setProperty('display', 'block', 'important');
+          found = true;
+        } else {
+          item.style.setProperty('display', 'none', 'important');
         }
-        nextEl = nextEl.nextElementSibling;
-      }
-      letter.style.display = hasVisibleSongs ? 'block' : 'none';
+      });
+
+      letters.forEach(letter => {
+        let hasVisible = false;
+        let next = letter.nextElementSibling;
+        while (next && next.classList.contains('song-item')) {
+          if (next.style.display !== 'none') {
+            hasVisible = true;
+            break;
+          }
+          next = next.nextElementSibling;
+        }
+        letter.style.setProperty('display', hasVisible ? 'block' : 'none', 'important');
+      });
+
+      document.getElementById('no-results').style.display = found ? 'none' : 'block';
     });
+  }
 
-    noResults.style.display = foundAny ? 'none' : 'block';
+  /* Kluczowe dla Chirpy: uruchom przy każdym załadowaniu strony */
+  if (typeof pageviews !== 'undefined') {
+    runSongSearch();
+  } else {
+    document.addEventListener('DOMContentLoaded', runSongSearch);
+  }
+
+  /* Dodatkowy wyzwalacz dla nawigacji Chirpy */
+  window.addEventListener('message', (event) => {
+    if (event.data === 'clear-search') {
+       runSongSearch();
+    }
   });
-}
-
-// Ten kawałek kodu pilnuje, żeby wyszukiwarka odpaliła się nawet w Chirpy
-document.addEventListener('DOMContentLoaded', startSearching);
-startSearching(); // Odpalenie bezpośrednie na wszelki wypadek
+  
+  // Uruchomienie wymuszone
+  setTimeout(runSongSearch, 500);
 </script>
