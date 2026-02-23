@@ -25,4 +25,64 @@ order: 99
     {% endif %}
 
     <div class="song-item" style="margin-bottom: 0.5rem;">
-      <a href="{{ song.url | relative_url }}" style="font-weight: 600; text-decoration:
+      <a href="{{ song.url | relative_url }}" style="font-weight: 600; text-decoration: none; display: block; padding: 5px 0;">{{ song.title }}</a>
+    </div>
+  {% endfor %}
+</div>
+
+<div id="no-results" style="display:none; padding: 20px; background: var(--main-border-color); border-radius: 10px; text-align: center; margin-top: 20px;">
+  Nie znaleziono piosenek o tej nazwie. 🎸
+</div>
+
+<script>
+  function runSongSearch() {
+    const input = document.getElementById('song-search');
+    const stats = document.getElementById('search-stats');
+    const noResults = document.getElementById('no-results');
+    
+    if (!input) return;
+
+    input.addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+      const items = document.querySelectorAll('.song-item');
+      const letters = document.querySelectorAll('.letter-group');
+      let foundCount = 0;
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.setProperty('display', 'block', 'important');
+          foundCount++;
+        } else {
+          item.style.setProperty('display', 'none', 'important');
+        }
+      });
+
+      letters.forEach(letter => {
+        let hasVisible = false;
+        let next = letter.nextElementSibling;
+        while (next && next.classList.contains('song-item')) {
+          if (next.style.display !== 'none') {
+            hasVisible = true;
+            break;
+          }
+          next = next.nextElementSibling;
+        }
+        letter.style.setProperty('display', hasVisible ? 'block' : 'none', 'important');
+      });
+
+      if (query.length > 0) {
+        stats.style.display = 'block';
+        stats.textContent = 'Znaleziono: ' + foundCount;
+        noResults.style.display = foundCount > 0 ? 'none' : 'block';
+      } else {
+        stats.style.display = 'none';
+        noResults.style.display = 'none';
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', runSongSearch);
+  if (document.readyState !== 'loading') runSongSearch();
+  setTimeout(runSongSearch, 500);
+</script>
