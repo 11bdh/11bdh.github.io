@@ -5,16 +5,31 @@ icon: fas fa-music
 order: 99
 ---
 
+<style>
+  /* Wymuszamy ukrywanie elementów, gdy skrypt nada klasę 'hidden-song' */
+  .hidden-song {
+    display: none !important;
+  }
+  #song-search {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid var(--link-color);
+    border-radius: 25px;
+    background: var(--main-bg);
+    color: var(--text-color);
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+</style>
+
 <div id="search-container" style="margin-bottom: 2rem; position: sticky; top: 1rem; z-index: 1000; background: var(--main-bg);">
-  <input type="text" id="song-search" 
-         style="width: 100%; padding: 12px 20px; border: 2px solid var(--link-color); border-radius: 25px; background: var(--main-bg); color: var(--text-color); outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" 
-         placeholder="🔍 Szukaj piosenki..." autocomplete="off">
+  <input type="text" id="song-search" placeholder="🔍 Szukaj piosenki..." autocomplete="off">
   <div id="search-stats" style="display:none; font-size: 0.85rem; color: var(--link-color); margin: 8px 0 0 15px; font-weight: bold;"></div>
 </div>
 
 {% assign sorted_songs = site.piosenki | sort: "title" %}
 
-<div id="song-list">
+<div id="song-list-wrapper">
   {% assign current_letter = "" %}
   {% for song in sorted_songs %}
     {% capture first_letter %}{{ song.title | slice: 0 | upcase }}{% endcapture %}
@@ -33,59 +48,83 @@ order: 99
   <div style="position: relative; z-index: 1; padding: 60px 20px; text-align: center; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.9); background: rgba(0,0,0,0.2); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <h3 style="margin-bottom: 10px;">Pusto tutaj...</h3>
     <p>Nie znaleźliśmy takiej piosenki. Spróbuj wpisać coś innego! 🌵</p>
-    <button id="clear-search" style="margin-top: 20px; padding: 10px 25px; border-radius: 20px; border: none; background: var(--link-color); color: white; font-weight: bold; cursor: pointer;">
+    <button id="clear-search-btn" style="margin-top: 20px; padding: 10px 25px; border-radius: 20px; border: none; background: var(--link-color); color: white; font-weight: bold; cursor: pointer;">
       Wyczyść szukanie
     </button>
   </div>
 </div>
 
 <script>
-  (function() {
-    function initSearch() {
-      const input = document.getElementById('song-search');
-      const stats = document.getElementById('search-stats');
-      const noResults = document.getElementById('no-results');
-      const noResultsBg = document.getElementById('no-results-bg');
-      const clearBtn = document.getElementById('clear-search');
-      
-      if (!input || input.getAttribute('data-search-ready')) return;
-      
-      input.setAttribute('data-search-ready', 'true');
-      console.log("Wyszukiwarka zainicjalizowana!");
+  function applySearch() {
+    const searchInput = document.getElementById('song-search');
+    const songItems = document.querySelectorAll('.song-item');
+    const letters = document.querySelectorAll('.letter-group');
+    const stats = document.getElementById('search-stats');
+    const noResults = document.getElementById('no-results');
+    const noResultsBg = document.getElementById('no-results-bg');
 
-      input.addEventListener('input', function() {
-        const query = this.value.toLowerCase().trim();
-        const items = document.querySelectorAll('.song-item');
-        const letters = document.querySelectorAll('.letter-group');
-        let foundCount = 0;
+    if (!searchInput) return;
 
-        items.forEach(item => {
-          const text = item.innerText.toLowerCase();
-          if (text.includes(query)) {
-            item.style.display = 'block';
-            foundCount++;
-          } else {
-            item.style.display = 'none';
+    searchInput.addEventListener('input', function() {
+      const val = this.value.toLowerCase().trim();
+      let count = 0;
+
+      // 1. Filtrujemy piosenki
+      songItems.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(val)) {
+          item.classList.remove('hidden-song');
+          count++;
+        } else {
+          item.classList.add('hidden-song');
+        }
+      });
+
+      // 2. Filtrujemy litery alfabetu
+      letters.forEach(letter => {
+        let hasVisible = false;
+        let next = letter.nextElementSibling;
+        while (next && next.classList.contains('song-item')) {
+          if (!next.classList.contains('hidden-song')) {
+            hasVisible = true;
+            break;
           }
-        });
+          next = next.nextElementSibling;
+        }
+        if (hasVisible) letter.classList.remove('hidden-song');
+        else letter.classList.add('hidden-song');
+      });
 
-        letters.forEach(letter => {
-          let hasVisible = false;
-          let sibling = letter.nextElementSibling;
-          while (sibling && sibling.classList.contains('song-item')) {
-            if (sibling.style.display !== 'none') {
-              hasVisible = true;
-              break;
-            }
-            sibling = sibling.nextElementSibling;
-          }
-          letter.style.display = hasVisible ? 'block' : 'none';
-        });
+      // 3. Obsługa pustyni i statystyk
+      if (val === '') {
+        stats.style.display = 'none';
+        noResults.style.display = 'none';
+      } else {
+        stats.style.display = 'block';
+        stats.innerText = 'Znaleziono: ' + count;
+        
+        if (count === 0) {
+          const mode = document.documentElement.getAttribute('data-mode');
+          const img = mode === 'dark' ? 'pustynia-noc.png' : 'pustynia-dzien.png';
+          noResultsBg.style.backgroundImage = "url('{{ '/assets/zdjecia/' | relative_url }}" + img + "')";
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+    });
 
-        if (query.length > 0) {
-          stats.style.display = 'block';
-          stats.innerText = 'Znaleziono: ' + foundCount;
-          
-          if (foundCount === 0) {
-            const isDarkMode = document.documentElement.getAttribute('data-mode') === 'dark';
-            const imgPath = isDarkMode
+    // Przycisk wyczyść
+    document.getElementById('clear-search-btn').onclick = function() {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    };
+  }
+
+  // Chirpy Fix: Uruchamiaj przy każdym przeładowaniu strony/taba
+  document.addEventListener('DOMContentLoaded', applySearch);
+  // Jeśli strona już załadowana (zmiana taba)
+  if (document.readyState !== 'loading') applySearch();
+  // Backup na wypadek wolnego renderowania
+  setTimeout(applySearch, 1000);
+</script>
