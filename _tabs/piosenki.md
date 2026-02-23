@@ -18,8 +18,8 @@ order: 99
     z-index: 0;
   }
   .desert-overlay {
-    position: relative; z-index: 1; padding: 80px 20px; text-align: center; 
-    color: white !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    position: relative; z-index: 1; padding: 60px 20px; text-align: center; 
+    color: white !important; text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
     background: rgba(0,0,0,0.4); 
     height: 100%; display: flex; flex-direction: column; 
     justify-content: center; align-items: center;
@@ -48,11 +48,11 @@ order: 99
   {% endfor %}
 </div>
 
-<div id="no-results" style="display:none; margin-top: 20px; border-radius: 15px; overflow: hidden; position: relative; min-height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+<div id="no-results" style="display:none; margin-top: 20px; border-radius: 15px; overflow: hidden; position: relative; min-height: 400px;">
   <div id="no-results-bg"></div>
   <div class="desert-overlay">
     <h3 style="margin-bottom: 10px; font-size: 2rem; color: white;">Pusto tutaj... 🌵</h3>
-    <p style="font-weight: 500; color: white;">Nie znaleźliśmy takiej piosenki w naszym śpiewniku.</p>
+    <p style="font-weight: 500; color: white;">Nie znaleźliśmy takiej piosenki.</p>
     <button id="clear-btn" type="button" 
             style="margin-top: 25px; padding: 12px 35px; border-radius: 25px; border: none; background: #007bff; color: white; font-weight: bold; cursor: pointer;">
       Wyczyść szukanie
@@ -63,3 +63,61 @@ order: 99
 <script>
 function updateSongSearch() {
   const input = document.getElementById('song-search');
+  const val = input.value.toLowerCase().trim();
+  const items = document.querySelectorAll('.song-item');
+  const letters = document.querySelectorAll('.letter-group');
+  const desert = document.getElementById('no-results');
+  const stats = document.getElementById('search-stats');
+  const bg = document.getElementById('no-results-bg');
+  let found = 0;
+
+  items.forEach(item => {
+    if (item.innerText.toLowerCase().includes(val)) {
+      item.classList.remove('search-hidden');
+      found++;
+    } else {
+      item.classList.add('search-hidden');
+    }
+  });
+
+  letters.forEach(group => {
+    let visible = false;
+    let next = group.nextElementSibling;
+    while (next && next.classList.contains('song-item')) {
+      if (!next.classList.contains('search-hidden')) { visible = true; break; }
+      next = next.nextElementSibling;
+    }
+    group.classList.toggle('search-hidden', !visible);
+  });
+
+  if (val.length > 0) {
+    stats.style.display = 'block';
+    stats.innerText = 'Znaleziono: ' + found;
+    if (found === 0) {
+      // Wykrywanie trybu ciemnego (sprawdzamy atrybut data-mode na HTML)
+      const mode = document.documentElement.getAttribute('data-mode');
+      const isDark = (mode === 'dark');
+      
+      // DOPASOWANIE DO TWOICH NAZW PLIKÓW ZE SCREENÓW
+      const imgName = isDark ? 'pustynia-noc.png' : 'pustynia-dzien.png';
+      
+      bg.style.backgroundImage = "url('{{ '/assets/zdjecia/' | relative_url }}" + imgName + "')";
+      desert.style.display = 'block';
+    } else {
+      desert.style.display = 'none';
+    }
+  } else {
+    stats.style.display = 'none';
+    desert.style.display = 'none';
+  }
+}
+
+document.getElementById('clear-btn').onclick = function() {
+  const input = document.getElementById('song-search');
+  input.value = '';
+  updateSongSearch();
+};
+
+// Naprawa dla Chirpy - uruchom przy załadowaniu strony
+document.addEventListener('DOMContentLoaded', updateSongSearch);
+</script>
