@@ -14,35 +14,47 @@ title: "Wehikuł Czasu"
 Pamiętam dobrze ideał swój
 Marzeniami żyłem jak król
 Siódma rano to dla mnie była noc
-Pracować nie chciałem, nie miałem sił
+Pracować nie chciałem, włóczyłem się
 
 [Zwrotka 2]
-Pamiętam dobrze mój mały świat
-W nim przyjaciół wielu się miało
-Wpadali pogadać o tym i o owym
-O tym, co w życiu najważniejsze jest
+Za to do puszki zamykano mnie
+Za to zwykle zamykano mnie
+Po knajpach grywałem za piwko i chleb
+Na życiu bluesa tak mijał mi dzień
 
 [Refren]
 Tylko nocą do klubu "Puls"
 Jam session do rana, tam królował blues
 To już minęło, ten klimat, ten luz
-Wspaniali ludzie nie powrócą już
+CI wspaniali ludzie nie powrócą 
+Nie powrócą już! Nie
 
 [Zwrotka 3]
 Lecz we mnie zostało coś z tamtych lat
-Gdy wiatr we włosach i w sercu maj
-Gdy wolność była najważniejsza dla nas
-Gdy świat był piękny, bo młody był
+Mój mały, intymny, muzyczny świat
+Gdy tak wspominam ten miniony czas
+Wiem jedno, że to nie poszło w las
 
-[Refren]
+[Zwrotka 4]
+Dużo bym dał, by przeżyć to znów
+Wehikuł czasu to byłby cud!
+Mam jeszcze wiarę, odmieni się los
+Znów kwiatek do lufy wetknie im ktoś
+  
+[Refren]  
 Tylko nocą do klubu "Puls"
 Jam session do rana, tam królował blues
-To już minęło, ten klimat, ten luz
-Wspaniali ludzie nie powrócą już
+To już minęło, te czasy, ten luz
+Wspaniali ludzie nie powrócą
+Nie powrócą już!  
 
-[Zakończenie]
-Mój wehikuł czasu...
-Aaa, wehikuł czasu...
+Tylko nocą do klubu "Puls"
+Jam session do rana, tam królował blues
+To już minęło, te czasy, ten luz
+Wspaniali ludzie nie powrócą
+Nie powrócą już!
+  
+  
   </pre>
 </div>
 
