@@ -3,6 +3,8 @@ layout: page
 title: Wspomnienie Bumeranga
 ---
 
+Autor: Andrzej Starzec
+
 <div class="song-container">
   <pre class="song-lyrics">
 [Zwrotka 1]
