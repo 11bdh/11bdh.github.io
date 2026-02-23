@@ -3,11 +3,6 @@ layout: page
 title: Wehikuł Czasu
 ---
 
----
-layout: page
-title: "Wehikuł Czasu"
----
-
 <div class="song-container">
   <pre class="song-lyrics">
 [Zwrotka 1]
