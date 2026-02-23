@@ -28,78 +28,64 @@ order: 99
   {% endfor %}
 </div>
 
-<div id="no-results" style="display:none; margin-top: 20px; border-radius: 15px; overflow: hidden; position: relative; min-height: 300px; transition: all 0.5s ease;">
-  <div id="no-results-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: background-image 0.5s ease;"></div>
+<div id="no-results" style="display:none; margin-top: 20px; border-radius: 15px; overflow: hidden; position: relative; min-height: 300px;">
+  <div id="no-results-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
   <div style="position: relative; z-index: 1; padding: 60px 20px; text-align: center; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.9); background: rgba(0,0,0,0.2); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h3 style="margin-bottom: 10px; font-size: 1.8rem;">Pusto tutaj...</h3>
-    <p style="font-size: 1.1rem;">Nie znaleźliśmy takiej piosenki. Spróbuj wpisać coś innego! 🌵</p>
-    <button onclick="document.getElementById('song-search').value = ''; document.getElementById('song-search').dispatchEvent(new Event('input'));" 
-            style="margin-top: 20px; padding: 10px 25px; border-radius: 20px; border: none; background: var(--link-color); color: white; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <h3 style="margin-bottom: 10px;">Pusto tutaj...</h3>
+    <p>Nie znaleźliśmy takiej piosenki. Spróbuj wpisać coś innego! 🌵</p>
+    <button id="clear-search" style="margin-top: 20px; padding: 10px 25px; border-radius: 20px; border: none; background: var(--link-color); color: white; font-weight: bold; cursor: pointer;">
       Wyczyść szukanie
     </button>
   </div>
 </div>
 
 <script>
-  function runSongSearch() {
-    const input = document.getElementById('song-search');
-    const stats = document.getElementById('search-stats');
-    const noResults = document.getElementById('no-results');
-    const noResultsBg = document.getElementById('no-results-bg');
-    
-    if (!input) return;
+  (function() {
+    function initSearch() {
+      const input = document.getElementById('song-search');
+      const stats = document.getElementById('search-stats');
+      const noResults = document.getElementById('no-results');
+      const noResultsBg = document.getElementById('no-results-bg');
+      const clearBtn = document.getElementById('clear-search');
+      
+      if (!input || input.getAttribute('data-search-ready')) return;
+      
+      input.setAttribute('data-search-ready', 'true');
+      console.log("Wyszukiwarka zainicjalizowana!");
 
-    input.addEventListener('input', function() {
-      const query = this.value.toLowerCase().trim();
-      const items = document.querySelectorAll('.song-item');
-      const letters = document.querySelectorAll('.letter-group');
-      let foundCount = 0;
+      input.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        const items = document.querySelectorAll('.song-item');
+        const letters = document.querySelectorAll('.letter-group');
+        let foundCount = 0;
 
-      items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(query)) {
-          item.style.setProperty('display', 'block', 'important');
-          foundCount++;
-        } else {
-          item.style.setProperty('display', 'none', 'important');
-        }
-      });
-
-      letters.forEach(letter => {
-        let hasVisible = false;
-        let next = letter.nextElementSibling;
-        while (next && next.classList.contains('song-item')) {
-          if (next.style.display !== 'none') {
-            hasVisible = true;
-            break;
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'block';
+            foundCount++;
+          } else {
+            item.style.display = 'none';
           }
-          next = next.nextElementSibling;
-        }
-        letter.style.setProperty('display', hasVisible ? 'block' : 'none', 'important');
-      });
+        });
 
-      if (query.length > 0) {
-        stats.style.display = 'block';
-        stats.textContent = 'Znaleziono: ' + foundCount;
-        
-        if (foundCount === 0) {
-          // Ścieżka do Twojego folderu assets/zdjecia/ z rozszerzeniem .png
-          const isDarkMode = document.documentElement.getAttribute('data-mode') === 'dark';
-          const imgPath = isDarkMode 
-            ? '{{ "/assets/zdjecia/pustynia-noc.png" | relative_url }}' 
-            : '{{ "/assets/zdjecia/pustynia-dzien.png" | relative_url }}';
+        letters.forEach(letter => {
+          let hasVisible = false;
+          let sibling = letter.nextElementSibling;
+          while (sibling && sibling.classList.contains('song-item')) {
+            if (sibling.style.display !== 'none') {
+              hasVisible = true;
+              break;
+            }
+            sibling = sibling.nextElementSibling;
+          }
+          letter.style.display = hasVisible ? 'block' : 'none';
+        });
+
+        if (query.length > 0) {
+          stats.style.display = 'block';
+          stats.innerText = 'Znaleziono: ' + foundCount;
           
-          noResultsBg.style.backgroundImage = "url('" + imgPath + "')";
-          noResults.style.display = 'block';
-        } else {
-          noResults.style.display = 'none';
-        }
-      } else {
-        stats.style.display = 'none';
-        noResults.style.display = 'none';
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', runSongSearch);
-  if (document.readyState !== 'loading') run
+          if (foundCount === 0) {
+            const isDarkMode = document.documentElement.getAttribute('data-mode') === 'dark';
+            const imgPath = isDarkMode
