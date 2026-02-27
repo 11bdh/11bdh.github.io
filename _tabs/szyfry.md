@@ -7,7 +7,7 @@ order: 5
 
 <div style="background: var(--main-bg); padding: 20px; border-radius: 15px; border: 1px solid var(--main-border-color);">
   <label style="font-weight: bold; display: block; margin-bottom: 10px;">Wpisz tekst do zaszyfrowania:</label>
-  <textarea id="cipher-input" rows="3" placeholder="Np. Jajko" style="width: 100%; padding: 12px; border-radius: 10px; border: 2px solid var(--link-color); background: var(--main-bg); color: var(--text-color); outline: none; font-family: inherit; margin-bottom: 15px;"></textarea>
+  <textarea id="cipher-input" rows="3" placeholder= Np. Zbiórka o 9.00 na polanie" style="width: 100%; padding: 12px; border-radius: 10px; border: 2px solid var(--link-color); background: var(--main-bg); color: var(--text-color); outline: none; font-family: inherit; margin-bottom: 15px;"></textarea>
   
   <button id="btn-cipher" style="width: 100%; padding: 15px; background: #007bff; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem;"
     onclick="
