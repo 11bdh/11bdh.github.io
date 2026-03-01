@@ -7,11 +7,23 @@ order: 5
 
 <div style="background: var(--main-bg); padding: 20px; border-radius: 15px; border: 1px solid var(--main-border-color);">
   <label style="font-weight: bold; display: block; margin-bottom: 10px;">Wpisz tekst do zaszyfrowania:</label>
+  <textarea id="cipher-input" rows="3" placeholder="Np. Zbiórka jutro w lesie o 9.00" style="width: 100%; padding: 12px; border-radius: 10px; border: 2px solid var(--link-color); background: var(--main-bg); color: var(--text-color); outline: none; font-family: inherit; margin-bottom: 15px;"></textarea>
   
-  <textarea id="cipher-input" rows="3" placeholder="Np. Zbiórka o 9:00 na polanie przy starym dębie. Pamiętajcie o menażkach!" 
-    style="width: 100%; padding: 12px; border-radius: 10px; border: 2px solid var(--link-color); background: var(--main-bg); color: var(--text-color); outline: none; font-family: inherit; margin-bottom: 15px;"></textarea>
-  
-  <button id="btn-cipher" style="width: 100%; padding: 15px; background: #007bff; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem;">
+  <button id="btn-cipher" style="width: 100%; padding: 15px; background: #007bff; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem;"
+    onclick="
+      var t = document.getElementById('cipher-input').value.toUpperCase();
+      var g = {'G':'A','A':'G','D':'E','E':'D','R':'Y','Y':'R','P':'O','O':'P','L':'U','U':'L','K':'I','I':'K'};
+      var m = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----', ' ': '/'};
+      var c = {'A':'_|','B':'|_|','C':'|_','D':'￣|','E':'|￣|','F':'|￣','G':'_|·','H':'|_|·','I':'|_·','J':'￣|·','K':'|￣|·','L':'|￣·','M':'_|:','N':'|_|:','O':'|_:','P':'￣|:','Q':'|￣|:','R':'|￣:','S':'V','T':'<','U':'>','W':'^','X':'X','Y':'Y','Z':'Z'};
+      
+      var resG = ''; for(var i=0; i<t.length; i++) { resG += g[t[i]] || t[i]; }
+      var resM = ''; for(var i=0; i<t.length; i++) { resM += (m[t[i]] || t[i]) + ' '; }
+      var resC = ''; for(var i=0; i<t.length; i++) { resC += (c[t[i]] || t[i]) + '  '; }
+      
+      document.getElementById('out-gadery').innerText = resG;
+      document.getElementById('out-choc').innerText = resC;
+      document.getElementById('out-morse').innerText = resM;
+    ">
     ZASZYFRUJ WIADOMOŚĆ
   </button>
 </div>
@@ -32,30 +44,3 @@ order: 5
     <div id="out-morse" style="margin-top: 5px; font-family: monospace; min-height: 1.5em; color: var(--text-color); font-size: 1.2rem; word-break: break-all;"></div>
   </div>
 </div>
-
-<script>
-  // Funkcja uruchamiana po kliknięciu przycisku
-  document.getElementById('btn-cipher').onclick = function() {
-    var t = document.getElementById('cipher-input').value.toUpperCase();
-    
-    // Definicje szyfrów
-    var g = {'G':'A','A':'G','D':'E','E':'D','R':'Y','Y':'R','P':'O','O':'P','L':'U','U':'L','K':'I','I':'K'};
-    var m = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----', ' ': '/'};
-    var c = {'A':'_|','B':'|_|','C':'|_','D':'￣|','E':'|￣|','F':'|￣','G':'_|·','H':'|_|·','I':'|_·','J':'￣|·','K':'|￣|·','L':'|￣·','M':'_|:','N':'|_|:','O':'|_:','P':'￣|:','Q':'|￣|:','R':'|￣:','S':'V','T':'<','U':'>','W':'^','X':'X','Y':'Y','Z':'Z'};
-    
-    // Przetwarzanie GADERY
-    var resG = ''; 
-    for(var i=0; i<t.length; i++) { resG += g[t[i]] || t[i]; }
-    document.getElementById('out-gadery').innerText = resG;
-
-    // Przetwarzanie MORSE
-    var resM = ''; 
-    for(var i=0; i<t.length; i++) { resM += (m[t[i]] || t[i]) + ' '; }
-    document.getElementById('out-morse').innerText = resM;
-
-    // Przetwarzanie CZEKOLADKA
-    var resC = ''; 
-    for(var i=0; i<t.length; i++) { resC += (c[t[i]] || t[i]) + '  '; }
-    document.getElementById('out-choc').innerText = resC;
-  };
-</script>
