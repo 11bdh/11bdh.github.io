@@ -6,6 +6,7 @@ categories: [harcerstwo]
 tags: []
 render_with_liquid: false
 ---
+![Przypinka DMB](/assets/zdjecia/zbiorki/zbiorka-dmb/przypinka-dmb.png){: width="250" .w-50 .right}
 - 9:45 Rozpoczęcie Lampkowiska
 - 9:55 Rysowanie kartek urodzinowych
 - 10:10 piosenka
@@ -13,7 +14,6 @@ render_with_liquid: false
 - 10:25 piosenka
 - 10:30 Spotkanie z Robertem Baden-Powellem + pytania
 - 10:45 Zadania od Roberta Baden-Powella
-  ![Przypinka DMB](/assets/zdjecia/zbiorki/zbiorka-dmb/przypinka-dmb.png){: .w-50 .right}
 - 10:55 Zakończenie lampkowiska
 - Na zbiórce była możliwość zakupienia przypinek z okazji stulecia Dnia Myśli Braterskiej
   
