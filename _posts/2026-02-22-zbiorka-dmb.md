@@ -13,7 +13,7 @@ render_with_liquid: false
 - 10:25 piosenka
 - 10:30 Spotkanie z Robertem Baden-Powellem + pytania
 - 10:45 Zadania od Roberta Baden-Powella
-  ![Przypinka DMB](/assets/zdjecia/zbiorkizbiorka-dmb/przypinka-dmb.png){: .w-50 .right}
+  ![Przypinka DMB](/assets/zdjecia/zbiorki/zbiorka-dmb/przypinka-dmb.png){: .w-50 .right}
 - 10:55 Zakończenie lampkowiska
 - Na zbiórce była możliwość zakupienia przypinek z okazji stulecia Dnia Myśli Braterskiej
   
