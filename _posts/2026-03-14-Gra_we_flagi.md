@@ -1,7 +1,7 @@
 ---
 title:Gra we flagi
-author: adam
-date: YYYY-MM-DD 11:00:00 +0000
+author:adam
+date: 2026-03-14 11:30:00 +0000
 categories: [Kategoria]
 tags: [Tag]
 render_with_liquid: false
