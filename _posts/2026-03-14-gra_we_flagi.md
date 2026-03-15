@@ -1,6 +1,6 @@
 ---
-title:Gra we flagi
-author:adam
+title: Gra we flagi
+author: adam
 date: 2026-03-14 11:30:00 +0000
 categories: [Kategoria]
 tags: [Tag]
