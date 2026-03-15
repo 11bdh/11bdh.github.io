@@ -7,7 +7,7 @@ tags: [las]
 render_with_liquid: false
 ---
 
-## Czówaj !
+## Czuwaj !
 Na dzisiajeszej zbiórce gralićmy w lesie we flagi.
 
 <div style="display: flex; background: rgba(255, 0, 255, 0.1); padding: 1rem 1.25rem; border-radius: 0.5rem; align-items: flex-start; margin-bottom: 1rem;">
