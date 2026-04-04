@@ -8,8 +8,9 @@ render_with_liquid: false
 ---
 Czuwaj!
 Na ostatniej zbiór w 11 BDH zostaliśmy zaproszeni na zbiórkę 28 BDH.
-Zbiórka miała typ edukacyjny, a tematyką była pierwsza pomoc
-. Pierwszym zadaniem było szukanie drewnianych klocków z rodzajami i kolejnością podczas pomocy.
-
+Zbiórka miała typ edukacyjny, a tematyką była pierwsza pomoc.
+Pierwszym zadaniem było szukanie drewnianych klocków z rodzajami i kolejnością podczas pomocy.
+![Tablica z informacjami](/assets/zdjecia/zbiorki/zbiorka-2026-03-28/tablicazezbiorki.jpg "Tablica z informacjami")
 Kolejnym zadaniem było dobranie się w grupy, szukanie symulantów i pomaganiem im.
+
 Zbiórka była świetna i każdy się dobrze bawił.
