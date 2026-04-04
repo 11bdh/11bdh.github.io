@@ -1,6 +1,6 @@
 ---
 title: zbiórka "pierwsza pomoc"
-author: olaf_p, adam
+authors: [olaf_p, adam]
 date: 2026-03-28 11:30 +0000
 categories: [harcerstwo]
 tags: []
