@@ -1,7 +1,7 @@
 ---
 title: Otwarcie zgłoszeń na Turniej
 author: selim
-date: 2026-06-20 00:00:00 +0000
+date: 2026-06-19 00:00:00 +0000
 categories: [harcerstwo, turniej-20-lecie-drużyny]
 tags: [turniej, 20-lecie, husaria]
 render_with_liquid: false
