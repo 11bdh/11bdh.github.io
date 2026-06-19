@@ -23,9 +23,7 @@ Jeszcze przed rozpoczęciem zlotu patrolowi będą otrzymywać zadania drogą ma
 
 Finał turnieju odbędzie się podczas zlotu z okazji 20-lecia drużyny, który będzie miał miejsce **18-20 września 2026 roku w Borkach**. Na uczestników czekać będzie seria wyzwań sprawdzających wiedzę, zaradność, współpracę oraz harcerskiego ducha.
 
-Podczas uroczystego ogniska kończącego zlot zostanie wyłoniony zwycięzca, który zdobędzie zaszczytny tytuł:
-
-# **Patrol Złotych Skrzydeł 2026**
+Podczas uroczystego ogniska kończącego zlot zostanie wyłoniony zwycięzca, który zdobędzie zaszczytny tytuł **Patrol Złotych Skrzydeł 2026**.
 
 Zgłoszenia przyjmujemy do **31 sierpnia 2026 roku** za pomocą formularza:
 
@@ -33,5 +31,11 @@ https://forms.cloud.microsoft/e/nr9EkeAUnZ
 
 Niech zwyciężą ci, którzy potrafią współpracować, działać z honorem i nie boją się podejmować nowych wyzwań.
 
-**Czuwaj!**
+## Kontakt do Komendy Zlotu:
+pwd. Selim Mucharski <br>
+email: selim.mucharski@zhp.net.pl <br>
+tel: 799176020 <br>
+Discord: milesek
+
+**Czuwaj!** <br>
 **Komenda Zlotu 20-lecia 11 BDH "Husaria"**
