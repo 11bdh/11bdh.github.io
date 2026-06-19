@@ -27,7 +27,7 @@ Podczas uroczystego ogniska kończącego zlot zostanie wyłoniony zwycięzca, kt
 
 Zgłoszenia przyjmujemy do **31 sierpnia 2026 roku** za pomocą formularza:
 
-https://forms.cloud.microsoft/e/nr9EkeAUnZ
+[https://forms.cloud.microsoft/e/nr9EkeAUnZ](https://forms.cloud.microsoft/e/nr9EkeAUnZ)
 
 Niech zwyciężą ci, którzy potrafią współpracować, działać z honorem i nie boją się podejmować nowych wyzwań.
 
