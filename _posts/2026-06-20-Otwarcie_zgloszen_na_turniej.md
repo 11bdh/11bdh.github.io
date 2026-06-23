@@ -31,6 +31,11 @@ Zgłoszenia przyjmujemy do **31 sierpnia 2026 roku** za pomocą formularza:
 
 Niech zwyciężą ci, którzy potrafią współpracować, działać z honorem i nie boją się podejmować nowych wyzwań.
 
+### Lokalizacja 
+Biwak odbędzie się w Bazie Harcerskiej w Borkach
+
+<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=650&amp;height=400&amp;hl=en&amp;q=Baza harcerska w Borkachdway, New York&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embed-googlemap.com">google maps embed</a></div><style>.mapouter{position:relative;text-align:right;width:650px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:650px;height:400px;}.gmap_iframe {width:650px!important;height:400px!important;}</style></div>
+
 ## Kontakt do Komendy Zlotu:
 pwd. Selim Mucharski <br>
 email: selim.mucharski@zhp.net.pl <br>
