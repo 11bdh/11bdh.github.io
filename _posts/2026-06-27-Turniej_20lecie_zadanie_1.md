@@ -24,7 +24,7 @@ Nie liczy się rozmach przedsięwzięcia, lecz **szczerość intencji i wspólny
 ### Jak udokumentować służbę?
 
 By Komenda mogła nagrodzić Wasze zasługi złotem punktów, prosimy o:
-- krótki **opis** wykonanej służby (co, gdzie, dla kogo i z jakim sercem),
+- krótki **opis** wykonanej służby (co, gdzie, dla kogo),
 - kilka **zdjęć** dokumentujących Wasze dzieło,
 - garść **refleksji** — czego nauczyła Was ta służba i co z niej zabieracie w dalszą drogę.
 
