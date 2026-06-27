@@ -34,7 +34,7 @@ Sprawozdania ze służby przesyłajcie drogą mailową **do 15.07.2026** na adre
 
 ### Punktacja
 
-Czasu macie sporo, zatem i nagroda jest swoita - możecie zobyć aż **50 pkt**.
+Czasu macie sporo, zatem i nagroda jest sowita - możecie zobyć aż **50 pkt**.
 
 ---
 
