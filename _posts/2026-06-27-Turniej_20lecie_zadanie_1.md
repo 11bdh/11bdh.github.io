@@ -7,11 +7,11 @@ tags: [turniej, 20-lecie, husaria]
 render_with_liquid: false
 ---
 
-# Zadanie 1: Służba harcerska
+# Zadanie 1: Harcerska służba
 
 ## Czuwaj!
 
-Skoro skrzydła zostały już rozpostarte, nadszedł czas, by wzbić się ku górze! Z dumą i radością ogłaszamy pierwsze wyzwanie etapu przedzlotowego — **Zadanie 1: Służba Harcerska!**
+Skoro skrzydła zostały już rozpostarte, nadszedł czas, by wzbić się ku górze! Z dumą i radością ogłaszamy pierwsze wyzwanie etapu przedzlotowego — **Zadanie 1: Harcerska Służba!**
 
 Husaria nigdy nie ruszała do boju dla samej chwały. Za każdym natarciem stała idea, honor i dobro tych, których trzeba było bronić. W tym samym duchu i my zaczynamy nasz turniejowy szlak — nie od popisów, lecz od **służby**, która jest sercem każdego harcerza i prawdziwą miarą rycerskiej postawy.
 
