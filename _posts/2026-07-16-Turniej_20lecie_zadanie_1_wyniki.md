@@ -23,7 +23,7 @@ Każdy patrol, który podjął się tego wyzwania, pokazał, że husarski duch t
 | 1 | <span style="color:gray">(nazwa w trakcie ustalania)</span> | 48 | **48** |
 | 3 | Narodowa Partia Kurian | 42 | **42** |
 
-*Nazwa jednego z patroli zostanie wkrótce zaktualizowana. Tabela będzie uzupełniana o punkty z kolejnych zadań turnieju.*
+*Nazwa jednego z patroli zostanie wkrótce zaktualizowana.*
 
 ### Co dalej?
 
