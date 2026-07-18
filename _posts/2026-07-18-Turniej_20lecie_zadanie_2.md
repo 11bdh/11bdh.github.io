@@ -1,5 +1,6 @@
 ---
 title: Turniej o Złote Skrzydła - zadanie 2
+author: selim
 date: 2026-07-18 00:00:00 +0200
 categories: [harcerstwo, turniej-20-lecie-drużyny]
 tags: [turniej, 20-lecie, husaria]
