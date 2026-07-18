@@ -75,4 +75,4 @@ Niech to zadanie pokaże, że Wasz patrol potrafi czytać nie tylko mapę, ale i
 - *nazwy rzek, jezior itp.*
 - *język w jakim napisana jest mapa (może jakieś miasto leżało kiedyś w granicach innego państwa niż obecnie)*
 
-*Jeżeli napotkacie trudności, nie bójcie się szukać informacji w internecie. Przydatna strona: [http://igrek.amzp.pl/](http://igrek.amzp.pl/)*
+*Jeżeli napotkacie trudności, nie bójcie się szukać informacji w internecie. Przydatna strona: [https://igrek.amzp.pl/](https://igrek.amzp.pl/)*
